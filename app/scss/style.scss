@@ -1,5 +1,33 @@
+@import 'colors';
+@import 'variables';
 @import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../bower_components/font-awesome/scss/font-awesome';
 
 body {
-	background-color: #fafafa;
+	background-color: $white;
+}
+
+form {
+	margin-bottom: 20px;
+}
+
+.box {
+	background-color: darken($white, 5%);
+	border: 1px solid rgba(0,0,0,0.3);
+	padding: 20px;
+	border-radius: 10px;
+	min-height: 400px;
+
+	.fa-spinner {
+		color: $blue;
+		font-size: 70px;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+		position: relative;
+		top: 130px;
+
+		&.loaded {
+			opacity: 1;
+		}
+	}
 }

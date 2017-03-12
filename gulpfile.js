@@ -48,22 +48,22 @@ gulp.task('useref', function(){
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({
+    .pipe(reload({
         stream: true
     }))
 });
 
 // main task for building for deployment
-gulp.task('build', function (callback) {
-  runSequence(['clean:dist'],
-    ['sass', 'useref', 'images', 'fonts'],
-    callback
-  )
-});
+//gulp.task('build', function (callback) {
+//  runSequence(['clean:dist'],
+//    ['sass', 'useref', 'images', 'fonts'],
+//    callback
+//  )
+//});
 
 // set default task for deving
 gulp.task('default', ['browser-sync'], function () {
-  gulp.watch(['app/*.php'], [reload]);
+  gulp.watch(['app/**/*.php'], [reload]);
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/js/**/*.js', reload);
   gulp.watch('app/**/*.html', ['useref']);

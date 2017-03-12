@@ -1,19 +1,16 @@
-<!doctype html>
-<html>
-	<head>
-		<title>RRG</title>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="container">
-			<h1>Testing</h1>
-			<form action="api.php" type="GET">
-				<input type="text" name="rest" />
+<?php include 'templates/top.php' ?>
+	<div class="container">
+		<h1>Test</h1>
+		<form action="results.php" type="GET">
+			<div class="form-group">
 				<label for="rest" id="rest">Rest</label>
-				<button type="submit">Submit</button>
-			</form>
-		</div>
-		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="js/main.js"></script>
-	</body>
-</html>
+				<input class="form-control" type="text" name="rest" />
+			</div>
+			<div class="form-group">
+				<label for="rest" id="location">Location</label>
+				<input class="form-control" type="text" name="location" />
+			</div>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+<?php include 'templates/bottom.php' ?>
